@@ -1,2 +1,3 @@
 # Rotating-Planet-CSS
- CSS exercise
+ 
+ A CSS-only exercise mainly concerning animations.

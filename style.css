@@ -5,12 +5,12 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: #060033;
 }
 
 .container {
     width: 150px;
     height: 150px;
-    background-color: yellow;
     border-radius: 50%;
     transform: scaleX(5);
 }
@@ -21,11 +21,18 @@ body {
     border-radius: 50%;
     transform: scaleX(0.2);
 }
+.planet:after {
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    inset: 0;
+}
 
 .route {
     width: 100%;
     height: 100%;
     animation: rotate 12s infinite linear;
+    position: absolute;
 }
 
 @keyframes rotate {
@@ -38,7 +45,19 @@ body {
 }
 
 .planet-container {
+    width: 60px;
+    height: 60px;
     animation: correction 12s infinite linear;
+    position: absolute;
+}
+
+#second-planet-container {
+    left: 85px;
+}
+
+#third-planet-container {
+    left: 42.5px;
+    top: 100px;
 }
 
 @keyframes correction {
@@ -51,13 +70,298 @@ body {
 }
 
 #first-planet {
-    background-color: blue;
+    animation: firstPlanetRender 12s infinite linear;
+}
+#first-planet:after {
+    animation: firstPlanetRenderRotator 12s infinite linear;
 }
 
 #second-planet {
-    background-color: red;
+    animation: secondPlanetRender 12s infinite linear;
+}
+#second-planet:after {
+    animation: secondPlanetRenderRotator 12s infinite linear;
 }
 
 #third-planet {
-    background-color: green;
+    animation: thirdPlanetRender 12s infinite linear;
+}
+#third-planet:after {
+    animation: thirdPlanetRenderRotator 12s infinite linear;
+}
+
+.planet-index {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#first-planet-index {
+    animation: hideFirstPlanet 12s infinite;
+}
+
+
+.sun {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #FFDD00;
+    transform: scaleX(0.2);
+    box-shadow: 0 0 60px #FF661C;
+}
+
+@keyframes hideFirstPlanet {
+    0% {
+        z-index: 999;
+        transform: scale(1);
+    }
+    25% {
+        z-index: -999;
+        transform: scale(0.8);
+    }
+    50% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(1.2);
+    }
+    100% {
+        z-index: 999;
+        transform: scale(1);
+    }
+}
+
+#second-planet-index {
+    animation: hideSecondPlanet 12s infinite;
+}
+
+@keyframes hideSecondPlanet {
+    0% {
+        z-index: -999;
+        transform: scale(0.8);
+    }
+    25% {
+        transform: scale(1);
+    }
+    50% {
+        z-index: 999;
+        transform: scale(1.2);
+    }
+    75% {
+        transform: scale(1);
+    }
+    100% {
+        z-index: -999;
+        transform: scale(0.8);
+    }
+}
+
+#third-planet-index {
+    animation: hideThirdPlanet 12s infinite;
+}
+
+@keyframes hideThirdPlanet {
+    0% {
+        z-index: 999;
+        transform: scale(1.2);
+    }
+    25% {
+        transform: scale(1);
+    }
+    50% {
+        z-index: -999;
+        transform: scale(0.8);
+    }
+    75% {
+        transform: scale(1);
+    }
+    100% {
+        z-index: 999;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes firstPlanetRender {
+    0% {
+        background: linear-gradient(-90deg, #A637E6 50%, #8427E6 50%);
+    }
+    12% {
+        background: linear-gradient(-90deg, #A637E6 50%, #8427E6 50%);
+    }
+    12.1% {
+        background: linear-gradient(90deg, #A637E6 50%, #8427E6 50%);
+    }
+    62% {
+        background: linear-gradient(90deg, #A637E6 50%, #8427E6 50%);
+    }
+    62.1% {
+        background: linear-gradient(-90deg, #A637E6 50%, #8427E6 50%);
+    }
+    100% {
+        background: linear-gradient(-90deg, #A637E6 50%, #8427E6 50%);
+    }
+}
+
+@keyframes firstPlanetRenderRotator {
+    0% {
+        transform: scaleX(0.2);
+        background-color: #A637E6;
+    }
+    12% {
+        transform: scaleX(1);
+        background-color: #A637E6;
+    }
+    12.1% {
+        transform: scaleX(-1);
+        background-color: #A637E6;
+    }
+    37% {
+        transform: scaleX(0);
+        background-color: #A637E6;
+    }
+    37.1% {
+        transform: scaleX(0);
+        background-color: #8427E6;
+    }
+    62% {
+        transform: scaleX(1);
+        background-color: #8427E6;
+    }
+    62.1% {
+        transform: scaleX(-1);
+        background-color: #8427E6;
+    }
+    87% {
+        transform: scaleX(0);
+        background-color: #8427E6;
+    }
+    87.1% {
+        transform: scaleX(0);
+        background-color: #A637E6;
+    }
+    100% {
+        transform: scaleX(0.2);
+        background-color: #A637E6;
+    }
+}
+
+@keyframes secondPlanetRender {
+    0% {
+        background: linear-gradient(90deg, #E52C12 50%, #A2210E 50%);
+    }
+    40% {
+        background: linear-gradient(90deg, #E52C12 50%, #A2210E 50%);
+    }
+    40.1% {
+        background: linear-gradient(-90deg, #E52C12 50%, #A2210E 50%);
+    }
+    90% {
+        background: linear-gradient(-90deg, #E52C12 50%, #A2210E 50%);
+    }
+    90.1% {
+        background: linear-gradient(90deg, #E52C12 50%, #A2210E 50%);
+    }
+    100% {
+        background: linear-gradient(90deg, #E52C12 50%, #A2210E 50%);
+    }
+}
+
+@keyframes secondPlanetRenderRotator {
+    0% {
+        transform: scaleX(0.5);
+        background-color: #E52C12;
+    }
+    15% {
+        transform: scaleX(0);
+        background-color: #E52C12;
+    }
+    15.1% {
+        transform: scaleX(0);
+        background-color: #A2210E;
+    }
+    40% {
+        transform: scaleX(-1);
+        background-color: #A2210E;
+    }
+    40.1% {
+        transform: scaleX(1);
+        background-color: #A2210E;
+    }
+    65% {
+        transform: scaleX(0);
+        background-color: #A2210E;
+    }
+    65.1% {
+        transform: scaleX(0);
+        background-color: #E52C12;
+    }
+    90% {
+        transform: scaleX(-1);
+        background-color: #E52C12;
+    }
+    90.1% {
+        transform: scaleX(1);
+        background-color: #E52C12;
+    }
+    100% {
+        transform: scaleX(0.5);
+        background-color: #E52C12;
+    }
+}
+
+@keyframes thirdPlanetRender {
+    0% {
+        background: linear-gradient(-90deg, #42B750 50%, #27762F 50%); 
+    }
+    49% {
+        background: linear-gradient(-90deg, #42B750 50%, #27762F 50%);
+    }
+    49.1% {
+        background: linear-gradient(90deg, #42B750 50%, #27762F 50%);
+    }
+    99% {
+        background: linear-gradient(90deg, #42B750 50%, #27762F 50%);
+    }
+    99.1% {
+        background: linear-gradient(-90deg, #42B750 50%, #27762F 50%);
+    }
+    100% {
+        background: linear-gradient(-90deg, #42B750 50%, #27762F 50%);
+    }
+}
+
+@keyframes thirdPlanetRenderRotator {
+    0% {
+        transform: scaleX(1);
+        background-color: #27762F;
+    }
+    25% {
+        transform: scaleX(0);
+        background-color: #27762F;
+    }
+    25.1% {
+        transform: scaleX(0);
+        background-color: #42B750;
+    }
+    49% {
+        transform: scaleX(-1);
+        background-color: #42B750;
+    }
+    49.1% {
+        transform: scaleX(1);
+        background-color: #42B750;
+    }
+    75% {
+        transform: scaleX(0);
+        background-color: #42B750;
+    }
+    75.1% {
+        transform: scaleX(0);
+        background-color: #27762F;
+    }
+    100% {
+        transform: scaleX(1);
+        background-color: #27762F;
+    }
 }

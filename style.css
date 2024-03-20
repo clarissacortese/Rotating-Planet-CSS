@@ -1,250 +1,245 @@
+/* The body style applies to the whole page. It sets the page to be a flex container with center alignment, and gives it a specific background color. */
 body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #060033;
+    margin: 0; /* Removes the margin around the body */
+    padding: 0; /* Removes the padding around the body */
+    display: flex; /* Sets the display type to flex to enable flex container */
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center; /* Centers the content vertically */
+    height: 100vh; /* Sets the height to 100% of the viewport height */
+    background-color: #060033; /* Sets the background color */
 }
 
+/* The container style applies to the main container element. It sets the size and shape of the container. */
 .container {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    transform: scaleX(5);
+    width: 150px; /* Sets the width of the container */
+    height: 150px; /* Sets the height of the container */
+    border-radius: 50%; /* Makes the container circular */
+    transform: scaleX(5); /* Stretches the container horizontally */
 }
 
+/* The planet style applies to the planet elements. It sets the size, shape, and initial scale of the planets. */
 .planet {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    transform: scaleX(0.2);
+    width: 60px; /* Sets the width of the planet */
+    height: 60px; /* Sets the height of the planet */
+    border-radius: 50%; /* Makes the planet circular */
+    transform: scaleX(0.2); /* Shrinks the planet horizontally */
 }
+
+/* The planet:after style applies to a pseudo-element that is the last child of the planet elements. It sets the shape and position of the pseudo-element. */
 .planet:after {
-    content: "";
-    border-radius: 50%;
-    position: absolute;
-    inset: 0;
+    content: ""; /* Required for the pseudo-element to be displayed */
+    border-radius: 50%; /* Makes the pseudo-element circular */
+    position: absolute; /* Positions the pseudo-element absolutely within the planet */
+    inset: 0; /* Sets the top, right, bottom, and left positions to 0 */
 }
 
+/* The route style applies to the route elements. It sets the size, position, and animation of the routes. */
 .route {
-    width: 100%;
-    height: 100%;
-    animation: rotate 12s infinite linear;
-    position: absolute;
+    width: 100%; /* Sets the width of the route to fill its parent */
+    height: 100%; /* Sets the height of the route to fill its parent */
+    animation: rotate 12s infinite linear; /* Applies a rotation animation to the route */
+    position: absolute; /* Positions the route absolutely within its parent */
 }
 
+/* Defines a keyframes animation named 'rotate' that rotates an element from 0 to 360 degrees */
 @keyframes rotate {
     0% {
-        transform: rotateZ(0deg);
+        transform: rotateZ(0deg); /* Starts the rotation at 0 degrees */
     }
     100% {
-        transform: rotateZ(360deg);
+        transform: rotateZ(360deg); /* Ends the rotation at 360 degrees */
     }
 }
 
+/* Styles for the planet container, including size, position, and animation */
 .planet-container {
-    width: 60px;
-    height: 60px;
-    animation: correction 12s infinite linear;
-    position: absolute;
+    width: 60px; /* Sets the width of the planet container */
+    height: 60px; /* Sets the height of the planet container */
+    animation: correction 12s infinite linear; /* Applies the 'correction' animation to the planet container */
+    position: absolute; /* Positions the planet container absolutely within its parent */
 }
 
+/* Specific styles for the second planet container */
 #second-planet-container {
-    left: 85px;
+    left: 85px; /* Positions the second planet container 85px from the left of its parent */
 }
 
+/* Specific styles for the third planet container */
 #third-planet-container {
-    left: 42.5px;
-    top: 100px;
+    left: 42.5px; /* Positions the third planet container 42.5px from the left of its parent */
+    top: 100px; /* Positions the third planet container 100px from the top of its parent */
 }
 
+/* Defines a keyframes animation named 'correction' that rotates an element from 360 to 0 degrees */
 @keyframes correction {
     0% {
-        transform: rotateZ(360deg);
+        transform: rotateZ(360deg); /* Starts the rotation at 360 degrees */
     }
     100% {
-        transform: rotateZ(0deg);
+        transform: rotateZ(0deg); /* Ends the rotation at 0 degrees */
     }
 }
 
+/* Specific styles for the first, second, and third planets, including animations */
 #first-planet {
-    animation: firstPlanetRender 12s infinite linear;
+    animation: firstPlanetRender 12s infinite linear; /* Applies the 'firstPlanetRender' animation to the first planet */
 }
 #first-planet:after {
-    animation: firstPlanetRenderRotator 12s infinite linear;
+    animation: firstPlanetRenderRotator 12s infinite linear; /* Applies the 'firstPlanetRenderRotator' animation to the pseudo-element of the first planet */
 }
 
 #second-planet {
-    animation: secondPlanetRender 12s infinite linear;
+    animation: secondPlanetRender 12s infinite linear; /* Applies the 'secondPlanetRender' animation to the second planet */
 }
 #second-planet:after {
-    animation: secondPlanetRenderRotator 12s infinite linear;
+    animation: secondPlanetRenderRotator 12s infinite linear; /* Applies the 'secondPlanetRenderRotator' animation to the pseudo-element of the second planet */
 }
 
 #third-planet {
-    animation: thirdPlanetRender 12s infinite linear;
+    animation: thirdPlanetRender 12s infinite linear; /* Applies the 'thirdPlanetRender' animation to the third planet */
 }
 #third-planet:after {
-    animation: thirdPlanetRenderRotator 12s infinite linear;
+    animation: thirdPlanetRenderRotator 12s infinite linear; /* Applies the 'thirdPlanetRenderRotator' animation to the pseudo-element of the third planet */
 }
 
+/* Styles for the planet index, including size and position */
 .planet-index {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+    position: absolute; /* Positions the planet index absolutely within its parent */
+    width: 100%; /* Sets the width of the planet index to fill its parent */
+    height: 100%; /* Sets the height of the planet index to fill its parent */
 }
 
+/* Specific styles for the first planet index, including animation */
 #first-planet-index {
-    animation: hideFirstPlanet 12s infinite;
+    animation: hideFirstPlanet 12s infinite; /* Applies the 'hideFirstPlanet' animation to the first planet index */
 }
 
-
+/* The sun style applies to the sun element. It sets the size, shape, color, and shadow of the sun. */
 .sun {
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    background-color: #FFDD00;
-    transform: scaleX(0.2);
-    box-shadow: 0 0 60px #FF661C;
+    position: absolute; /* Positions the sun absolutely within its parent */
+    width: 150px; /* Sets the width of the sun */
+    height: 150px; /* Sets the height of the sun */
+    border-radius: 50%; /* Makes the sun circular */
+    background-color: #FFDD00; /* Sets the color of the sun */
+    transform: scaleX(0.2); /* Shrinks the sun horizontally */
+    box-shadow: 0 0 60px #FF661C; /* Adds a shadow to the sun */
 }
 
+/* Defines a keyframes animation named 'hideFirstPlanet' that changes the z-index and scale of an element */
 @keyframes hideFirstPlanet {
-    0% {
-        z-index: 999;
-        transform: scale(1);
+    0%, 100% {
+        z-index: 999; /* Brings the element to the front */
+        transform: scale(1); /* Sets the scale to normal */
     }
     25% {
-        z-index: -999;
-        transform: scale(0.8);
+        z-index: -999; /* Sends the element to the back */
+        transform: scale(0.8); /* Shrinks the element */
     }
-    50% {
-        transform: scale(1);
-    }
-    75% {
-        transform: scale(1.2);
-    }
-    100% {
-        z-index: 999;
-        transform: scale(1);
+    50%, 75% {
+        transform: scale(1.2); /* Enlarges the element */
     }
 }
 
+/* Applies the 'hideSecondPlanet' animation to the second planet index */
 #second-planet-index {
-    animation: hideSecondPlanet 12s infinite;
+    animation: hideSecondPlanet 12s infinite; /* Repeats the animation indefinitely every 12 seconds */
 }
 
+/* Defines a keyframes animation named 'hideSecondPlanet' that changes the z-index and scale of an element */
 @keyframes hideSecondPlanet {
-    0% {
-        z-index: -999;
-        transform: scale(0.8);
+    0%, 100% {
+        z-index: -999; /* Sends the element to the back */
+        transform: scale(0.8); /* Shrinks the element */
     }
-    25% {
-        transform: scale(1);
+    25%, 75% {
+        transform: scale(1); /* Sets the scale to normal */
     }
     50% {
-        z-index: 999;
-        transform: scale(1.2);
-    }
-    75% {
-        transform: scale(1);
-    }
-    100% {
-        z-index: -999;
-        transform: scale(0.8);
+        z-index: 999; /* Brings the element to the front */
+        transform: scale(1.2); /* Enlarges the element */
     }
 }
 
+/* Applies the 'hideThirdPlanet' animation to the third planet index */
 #third-planet-index {
-    animation: hideThirdPlanet 12s infinite;
+    animation: hideThirdPlanet 12s infinite; /* Repeats the animation indefinitely every 12 seconds */
 }
 
+/* Defines a keyframes animation named 'hideThirdPlanet' that changes the z-index and scale of an element */
 @keyframes hideThirdPlanet {
-    0% {
-        z-index: 999;
-        transform: scale(1.2);
+    0%, 100% {
+        z-index: 999; /* Brings the element to the front */
+        transform: scale(1.2); /* Enlarges the element */
     }
-    25% {
-        transform: scale(1);
+    25%, 75% {
+        transform: scale(1); /* Sets the scale to normal */
     }
     50% {
-        z-index: -999;
-        transform: scale(0.8);
-    }
-    75% {
-        transform: scale(1);
-    }
-    100% {
-        z-index: 999;
-        transform: scale(1.2);
+        z-index: -999; /* Sends the element to the back */
+        transform: scale(0.8); /* Shrinks the element */
     }
 }
 
+/* Defines a keyframes animation named 'firstPlanetRender' that changes the background gradient of an element */
 @keyframes firstPlanetRender {
+    /* At the start of the animation, the gradient is from top to bottom */
     0% {
         background: linear-gradient(-90deg, #A637E6 50%, #8427E6 50%);
     }
-    12% {
-        background: linear-gradient(-90deg, #A637E6 50%, #8427E6 50%);
-    }
+    /* At 12% of the animation, the gradient flips from bottom to top */
     12.1% {
         background: linear-gradient(90deg, #A637E6 50%, #8427E6 50%);
     }
-    62% {
-        background: linear-gradient(90deg, #A637E6 50%, #8427E6 50%);
-    }
+    /* At 62.1% of the animation, the gradient flips back from top to bottom */
     62.1% {
         background: linear-gradient(-90deg, #A637E6 50%, #8427E6 50%);
     }
+    /* At the end of the animation, the gradient remains from top to bottom */
     100% {
         background: linear-gradient(-90deg, #A637E6 50%, #8427E6 50%);
     }
 }
 
+/* Defines a keyframes animation named 'firstPlanetRenderRotator' that changes the scale and background color of an element */
 @keyframes firstPlanetRenderRotator {
+    /* At the start of the animation, the element is horizontally shrunk and the background color is #A637E6 */
     0% {
         transform: scaleX(0.2);
         background-color: #A637E6;
     }
+    /* At 12% of the animation, the element is back to its normal size and the background color remains #A637E6 */
     12% {
         transform: scaleX(1);
         background-color: #A637E6;
     }
+    /* At 12.1% of the animation, the element is flipped horizontally and the background color remains #A637E6 */
     12.1% {
         transform: scaleX(-1);
         background-color: #A637E6;
     }
-    37% {
-        transform: scaleX(0);
-        background-color: #A637E6;
-    }
+    /* At 37.1% of the animation, the element is invisible (scaleX(0)) and the background color changes to #8427E6 */
     37.1% {
         transform: scaleX(0);
         background-color: #8427E6;
     }
-    62% {
-        transform: scaleX(1);
-        background-color: #8427E6;
-    }
+    /* At 62.1% of the animation, the element is flipped horizontally and the background color remains #8427E6 */
     62.1% {
         transform: scaleX(-1);
         background-color: #8427E6;
     }
-    87% {
-        transform: scaleX(0);
-        background-color: #8427E6;
-    }
+    /* At 87.1% of the animation, the element is invisible (scaleX(0)) and the background color changes back to #A637E6 */
     87.1% {
         transform: scaleX(0);
         background-color: #A637E6;
     }
+    /* At the end of the animation, the element is horizontally shrunk and the background color remains #A637E6 */
     100% {
         transform: scaleX(0.2);
         background-color: #A637E6;
     }
 }
+
+/* The same logic is applied to the second and the third planet, with different colors and gradients. */
 
 @keyframes secondPlanetRender {
     0% {
